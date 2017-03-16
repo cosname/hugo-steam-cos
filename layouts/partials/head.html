@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if not .IsHome }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}</title>
     {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
     {{ .Hugo.Generator }}
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ "css/screen.css" | absURL }}">
     <link rel="stylesheet" href="{{ "css/github.css" | absURL }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    <script async src="https://use.fontawesome.com/32c3d13def.js"></script>
     {{ range .Site.Params.customCSS }}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{ end }}

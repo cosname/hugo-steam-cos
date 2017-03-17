@@ -5,3 +5,23 @@
 		<section class="copyright">&copy; 2006 - {{.Now.Format "2006"}} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.name }}</a> {{ .Site.Params.copyright | markdownify }}</section>
 	</div>
 </footer>
+
+{{ if and (not .Params.disable_mathjax) (or (in (string .Content) "\\") (in (string .Content) "$$")) }}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+MathJax.Hub.Queue(function() {
+  var jaxs = MathJax.Hub.getAllJax();
+  for (var i = 0; i < jaxs.length; i++) {
+    var $jax = $(jaxs[i].SourceElement());
+    if ($jax.parent().is('code')) $jax.unwrap();
+  }
+});
+</script>
+{{ end }}

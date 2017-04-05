@@ -99,7 +99,7 @@ a.archive-link,
 .article-nav,
 .terms-list {
   margin: auto;
-  max-width: 600px;
+  max-width: 768px;
   width: 90%;
 }
 #site-head img {
@@ -288,7 +288,7 @@ footer section {
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 18px;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 768px;
   text-transform: uppercase;
   width: 90%;
 }
@@ -302,13 +302,14 @@ nav {
   border-bottom: 1px solid #ecf0f1;
   border-top: 1px solid #ecf0f1;
   margin: auto auto 2em auto;
-  max-width: 600px;
+  max-width: 768px;
 }
 nav ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 600px;
+  max-width: 768px;
+  width: 100%;
   overflow: hidden;
 }
 nav ul li {
@@ -334,7 +335,7 @@ nav.menu li {
 nav.menu li:last-child {
   margin: 0;
 }
-@media only screen and (min-width: 320px) and (max-width: 662px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   nav.menu li {
     display: block;
   }
@@ -364,7 +365,7 @@ a.archive-link {
 .pagination {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 768px;
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
@@ -624,7 +625,7 @@ section.author .meta a {
 h1.posts-tagged {
   margin: -17px auto -17px;
   text-align: center;
-  max-width: 600px;
+  max-width: 768px;
   font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   color: #596364;
   text-transform: uppercase;

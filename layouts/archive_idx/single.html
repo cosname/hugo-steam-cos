@@ -5,7 +5,8 @@
     {{ "{" }}
       "title": "{{ $e.Title }}",
       "link": "{{ $e.Permalink }}",
-      "date": "{{ $e.Date | dateFormat "2006-01-02" }}"
+      "date": "{{ $e.Date | dateFormat "2006-01-02" }}",
+      "description": "{{ $e.Description }}"
     {{ "}" }}
   {{ end }}
   ]

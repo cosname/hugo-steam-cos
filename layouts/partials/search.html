@@ -1,0 +1,22 @@
+{{ if .Site.Menus.main }}
+<div class="center container" id="app">
+  <div class="row">
+    <input v-model="user" placeholder="type an user">
+    <ul class="collection" v-if="user">
+        <li class="collection-item avatar">
+        <template v-if="user">
+          <p>找到{{"{{"}}response.total_count{{"}}"}}篇文章</p>
+          <ul>
+            <template v-for="item in response.items">
+              <li> <h3><a :href="item.path | capitalize">{{"{{"}}item.path | getTitle{{"}}"}}</a></h3></li>
+            </template>
+          </ul>
+        </template>
+        </li>
+      </ul>
+  </div>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="{{ "js/app.js" | absURL }}"></script>
+<script src="{{ "js/file.json" | absURL }}"></script>
+{{ end }}

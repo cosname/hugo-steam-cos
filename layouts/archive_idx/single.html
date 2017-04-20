@@ -1,0 +1,11 @@
+{{ "{" }}
+  "posts": [
+  {{ range (where .Site.Pages "Type" "post") }}
+    {{ "{" }}
+      "title": "{{ .Title }}",
+      "link": "{{ .Permalink }}",
+      "date": "{{ .Date | dateFormat "2006-01-02" }}"
+    {{ "}" }},
+  {{ end }}
+  ],
+{{ "}" }}

@@ -7,38 +7,58 @@ var app = new Vue({
 
   data: {
     user: null,
-    response: null
+    response: null,
+    index:null
   },
 
-  // watch: {
-  //   user: 'fetchData'
-  // },
+  watch: {
+    user: 'fetchData'
+  },
 
   methods: {
     fetchData: function () {
-      let self = this;
       console.log(123)
-      console.log(self.user)
+      let self = this;
+
+      console.log(apiURLLeft + encodeURI(self.user) + apiURLRight)
       fetch(apiURLLeft + encodeURI(self.user) + apiURLRight)
         .then(response => response.json())
           .then(data => {
+            console.log(data)
             self.response = data
           });
+
+
+    },
+    judge: function(e){
+        if(e.slice(0,12)!='content/post') return(false)
+        return(true)
     }
   },
   filters: {
-   capitalize: function (value) {
-     var len = value.length
-     output = "https://cosx.org/" +
-        value.slice(13,17) + "/" +
-        value.slice(18,20) + "/" +
-        value.slice(24,len-3)
-     return(output)
-   },
-   getTitle: function (value) {
-     var index = fileList.indexOf(value)
-     output = title[index]
-     return(output)
-   }
+     finder: function (value) {
+       var len = value.length
+       output = value.slice(13,len)
+       if(value.slice(0,12)!='content/post') return(null)
+       for(var i=0;i<Filelist.posts.length;i++){
+         if(output == Filelist.posts[i].path) return(i)
+       }
+     },
+     getTitle: function (value) {
+       return(Filelist.posts[value].title)
+     },
+     getAuthor: function (value) {
+       return(Filelist.posts[value].author)
+     },
+     getLink: function (value) {
+       console.log(value)
+       return(Filelist.posts[value].link)
+     },
+     getDes: function (value) {
+       return(Filelist.posts[value].description)
+     },
+     getDate: function (value) {
+       return(Filelist.posts[value].date)
+     }
    }
 });

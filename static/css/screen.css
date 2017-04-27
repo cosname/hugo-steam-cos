@@ -335,20 +335,20 @@ nav.menu li {
 nav.menu li:last-child {
   margin: 0;
 }
+.pagination {
+  text-align: center;
+}
+.pagination li:before {
+  content: "";
+}
+.pagination li {
+  display: inline;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   nav.menu li {
     display: block;
   }
-}
-nav.pagination li:first-child {
-  margin-left: 0;
-  margin-right: 0;
-  text-align: right;
-}
-nav.pagination li:last-child {
-  margin-left: 0;
-  margin-right: 0;
-  text-align: left;
 }
 a.archive-link {
   border-bottom: 1px solid #ecf0f1;
@@ -361,20 +361,6 @@ a.archive-link {
   padding: .5em 0;
   text-align: center;
   text-transform: uppercase;
-}
-.pagination {
-  position: relative;
-  width: 100%;
-  max-width: 768px;
-  font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
-  text-transform: uppercase;
-  font-size: 20px;
-  color: #596364;
-  text-align: center;
-  padding: 0.5em 0;
-}
-.pagination a {
-  /*color: #33cc99;*/
 }
 .older-posts,
 .newer-posts {

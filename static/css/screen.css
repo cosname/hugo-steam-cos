@@ -222,7 +222,7 @@ blockquote {
 }
 .post-meta {
   color: #95a5a6;
-  font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 18px;
   margin-top: 0.3em;
   text-transform: uppercase;
@@ -314,7 +314,7 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
   font-size: 18px;
   margin: 0;
   padding: 0 .5em;

@@ -1,0 +1,25 @@
+{{ if .Site.Menus.main }}
+<div class="center container" id="app">
+  <div class="row">
+    <input v-model="user" placeholder="查找文章">
+    <ul class="collection" v-if="response">
+        <li class="collection-item avatar">
+        <template v-if="response">
+          <p>找到{{"{{"}}response.total_count{{"}}"}}篇文章</p>
+          <ul>
+            <template v-for="item in response.items">
+              <li v-if="judge(item.path)"> <h3><a :href="item.path | finder | getLink">{{"{{"}}item.path | finder | getTitle{{"}}"}}</a>
+               作者: {{"{{"}}item.path | finder | getAuthor{{"}}"}} 时间: {{"{{"}}item.path | finder | getDate{{"}}"}} </h3>
+              <p ></p>
+            </li>
+            </template>
+          </ul>
+        </template>
+        </li>
+      </ul>
+  </div>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="{{ "js/app.js" | absURL }}"></script>
+<script src="{{ "archive_idx.json" | absURL }}"></script>
+{{ end }}
